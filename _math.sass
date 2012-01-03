@@ -1,1 +1,64 @@
-// Sassy math
+// SASSY MATH
+
+// ref http://compass-style.org/reference/compass/helpers/trig/
+
+@charset "UTF-8"
+
+// Variables
+$pi: 3.14159265
+$π: $pi
+$e: 2.718281828
+
+$rand: random number
+
+@function percent($number)
+  @return ($number * .01)
+
+@function exponent($base, $exponent)
+  // reset value
+  $value: $base
+  // positive intergers get multiplied
+  @if $exponent > 1
+    @for $i from 2 through $exponent
+      $value: $value * $base
+  // negitive intergers get divided. A number divided by itself is 1
+  @if $exponent < 1
+    @for $i from 0 through -$exponent
+      $value: $value / $base
+  // return the last value written
+  @return $value
+
+@function sin($number)
+  @return ($number)
+
+@function sinh($number)
+  @return ($number)
+
+@function cos($number)
+  @return ($number)
+
+@function cosh($number)
+  @return ($number)
+
+@function tan($number)
+  @return ($number)
+
+@function tanh($number)
+  @return ($number)
+
+@function log($number)
+  @return ($number)
+
+@function Rad($number)
+  @return ($number)
+
+@function root($number)
+  @return ($number)
+
+@function √($number)
+  @return root($number)
+
+
+// TESTS
+.foo
+  width: √($π)
