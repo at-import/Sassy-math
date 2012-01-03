@@ -52,26 +52,27 @@ $rand: random number
 @function Rad($number)
   @return ($number)
 
-@function root($number)
-  @if $number == 1
-    @return 1
+@function n-root($number, $n)
   @if $number < 1
     @return ERROR
     @warn ROOT ERROR
   // If a whole number, generate it quickly
   @for $i from 1 through $number
-    @if $i * $i == $number
+    @if exponent($i, $n) == $number
       @return $i
   // Else, run through other options
   @for $i from 1 through ($number * 1000)
-    @if round(($i / 1000) * ($i / 1000) * 100) == round($number * 100)
+    @if round(exponent(($i / 1000), $n) * 100) == round($number * 100)
       @return ($i / 1000)
 
 @function √($number)
-  @return root($number)
+  @return n-root($number, 2)
+
+@function root($number)
+  @return n-root($number, 2)
 
 
 // TESTS
 .foo
-  width: √(12)
-  width: √(12) * √(12)
+  width: √(9)
+  width: √(9) * √(9)
