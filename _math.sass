@@ -53,7 +53,19 @@ $rand: random number
   @return ($number)
 
 @function root($number)
-  @return ($number)
+  @if $number == 1
+    @return 1
+  @if $number < 1
+    @return ERROR
+    @warn ROOT ERROR
+  // If a whole number, generate it quickly
+  @for $i from 1 through $number
+    @if $i * $i == $number
+      @return $i
+  // Else, run through other options
+  @for $i from 1 through ($number * 1000)
+    @if round(($i / 1000) * ($i / 1000) * 100) == round($number * 100)
+      @return ($i / 1000)
 
 @function √($number)
   @return root($number)
@@ -61,4 +73,5 @@ $rand: random number
 
 // TESTS
 .foo
-  width: √($π)
+  width: √(12)
+  width: √(12) * √(12)
