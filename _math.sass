@@ -61,7 +61,7 @@ $rand: random number
     @if exponent($i, $n) == $number
       @return $i
   // Else, run through other options
-  @for $i from 1 through ($number * 1000)
+  @for $i from 1 through (($number * 1000) / 2)
     @if round(exponent(($i / 1000), $n) * 100) == round($number * 100)
       @return ($i / 1000)
 
