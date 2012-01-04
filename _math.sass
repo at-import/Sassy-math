@@ -49,8 +49,14 @@ $rand: random number
 @function log($number)
   @return ($number)
 
-@function Rad($number)
+@function ln($number)
   @return ($number)
+
+@function deg-to-rad($number)
+  @return ($number * ( $pi / 180deg))
+
+@function rad-to-deg($number)
+  @return ($number * ( 180deg / $pi ))
 
 @function n-root($number, $n)
   @if $number < 1
@@ -70,9 +76,14 @@ $rand: random number
 
 @function root($number)
   @return n-root($number, 2)
+  
+@function sqrt($number)
+  @return n-root($number, 2)
 
 
 // TESTS
 .foo
   width: √(9)
   width: √(9) * √(9)
+  width: deg-to-rad(90deg)
+  -webkit-transform: rotate(rad-to-deg($pi/2))
