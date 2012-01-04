@@ -4,17 +4,25 @@
 
 @charset "UTF-8";
 
+//////////////////////////////
 // Variables
-$pi: 3.142;
+//////////////////////////////
+$pi: 3.1415926535897932384626433832795028841971693993751;
 $π: $pi;
-$e: 2.718;
+$e: 2.71828182845904523536028747135266249775724709369995;
 
 $rand: random number;
 
+//////////////////////////////
+// Percent
+//////////////////////////////
 @function percent($number) {
   @return $number * 0.01; 
 }
 
+//////////////////////////////
+// Exponent
+//////////////////////////////
 @function exponent($base, $exponent) {
   // reset value
   $value: $base;
@@ -30,6 +38,9 @@ $rand: random number;
   @return $value; 
 }
 
+//////////////////////////////
+// Factorial
+//////////////////////////////
 @function factorial($number) {
   // reset value
   $value: 1;
@@ -42,50 +53,103 @@ $rand: random number;
   @return $value;
 }
 
-//Implemented with Taylor Series, CORDIC is more elegant but i assume performance is not an issue
-@function sin($number) {
-  // iterations
-  $n: 7;
-  $value: $number;
-  $odd: 1;
-  $add: 0;
-  
-  @for $i from 3 through $n {
-    @if $odd == 1 {
-      $odd: 0;
-      @if $add == 1 {
-        $value: $value + exponent($value, $i) / factorial($i);
-        $add: 0; 
-      }
-      @else {
-        $value: $value - exponent($value, $i) / factorial($i);
-        $add: 1; 
-      } 
-    } 
-  }
-  
-  @return $value; 
+@function fact($number) {
+  @return factorial($number); 
 }
 
-@function sinh($number) {
-  @return $number; 
+
+//////////////////////////////
+// Taylor Series
+//////////////////////////////
+// Taylor series can be used to estimate Sine and Consine
+@function taylor($start, $key, $number) {
+  $value: $start;
+  $add: 0;
+  $iter: 10;
+  
+  @for $i from 1 through $iter {
+    @if $add == 0 {
+      $value: $value - ( exponent($number, $key) / factorial($key) );
+      $add: 1;
+    }
+    @else {
+      $value: $value + ( exponent($number, $key) / factorial($key) );
+      $add: 0;
+    }
+    
+    $key: $key + 2;
+  }
+  
+  @return $value;
+}
+
+//////////////////////////////
+// Basic Trig Functions
+//////////////////////////////
+@function sin($number) {
+  @return taylor($number, 3, $number);
 }
 
 @function cos($number) {
-  @return $number; 
+  @return taylor(1, 2, $number);
+}
+
+// Trig Identity: Tangent = Sine divided by Cosine.
+@function tan($number) {
+  @return sin($number) / cos($number); 
+}
+
+//////////////////////////////
+// Reciprocal Trig Functions
+//////////////////////////////
+@function csc($number) {
+  @return 1 / sin($number);
+}
+
+@function scs($number) {
+  @return 1 / cos($number);
+}
+
+@function cot($number) {
+  @return 1 / tan($number);
+}
+
+//////////////////////////////
+// Hyperbolic Functions
+//////////////////////////////
+@function sinh($number) {
+  $top: exponent($e, (2 * $number)) - 1;
+  $bottom: 2 * exponent($e, $number);
+  @return  $top / $bottom;
 }
 
 @function cosh($number) {
-  @return $number; 
-}
-
-@function tan($number) {
-  @return $number; 
+  $top: exponent($e, (2 * $number)) + 1;
+  $bottom: 2 * exponent($e, $number);
+  @return  $top / $bottom;
 }
 
 @function tanh($number) {
-  @return $number; 
+  $top: exponent($e, (2 * $number)) - 1;
+  $bottom: exponent($e, (2 * $number)) + 1;
+  @return  $top / $bottom;
 }
+
+//////////////////////////////
+// Reciprocal Hyperbolic Functions
+//////////////////////////////
+@function csch($number) {
+  @return 1 / sinh($number);
+}
+
+@function sech($number) {
+  @return 1 / cosh($number);
+}
+
+@function coth($number) {
+  @return 1/ tanh($number);
+}
+
 
 @function log($number) {
   @return $number; 
@@ -95,20 +159,10 @@ $rand: random number;
   @return $number; 
 }
 
-// Factorials
-@function factorial($number) {
-  $holder: 1;
-  @for $i from 1 through $number {
-    $holder: $holder * $i; 
-  }
-  @return $holder; 
-}
 
-@function fact($number) {
-  @return factorial($number); 
-}
-
-// Convert between Degrees and Radians
+//////////////////////////////
+// Degree/Radian Conversion
+//////////////////////////////
 @function deg-to-rad($number) {
   @return $number * $pi / 180deg; 
 }
@@ -117,7 +171,10 @@ $rand: random number;
   @return $number * 180deg / $pi; 
 }
 
-// nth Root of a Number
+//////////////////////////////
+// Root Functions
+//////////////////////////////
+// Basic General-Purpose Root Function
 @function n-root($number, $n) {
   @if $number < 1 {
     @return ERROR;
@@ -139,19 +196,27 @@ $rand: random number;
 
 // Square Roots
 @function √($number) {
-  @return n-root($number, 2); }
+  @return n-root($number, 2); 
+}
 
 @function root($number) {
-  @return n-root($number, 2); }
+  @return n-root($number, 2); 
+}
 
 @function sqrt($number) {
-  @return n-root($number, 2); }
+  @return n-root($number, 2); 
+}
 
-// TESTS
+//////////////////////////////
+// Export Test
+//////////////////////////////
 .foo {
   width: √(9);
   width: √(9) * √(9);
   width: deg-to-rad(90deg);
   width: factorial(9);
   -webkit-transform: rotate(rad-to-deg($pi / 2));
-  width: sin($pi / 4); }
+  width: sin($pi / 4); 
+  width: cos($pi / 2); 
+  height: sinh($pi/2);
+}
