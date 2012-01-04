@@ -49,7 +49,16 @@ $rand: random number;
   $value: $number;
   $odd: 1;
   $add: 0;
-  
+  @if $number < (-$pi/2) or $number > ($pi/2) {
+    @if $number < 0 {
+      $value: sin($number + $pi);
+    }
+    @else {
+      $value: sin($number - $pi);
+    }
+    $value: -$value;
+    @return $value;
+  }
   @for $i from 3 through $n {
     @if $odd == 1 {
       $odd: 0;
@@ -154,4 +163,11 @@ $rand: random number;
   width: deg-to-rad(90deg);
   width: factorial(9);
   -webkit-transform: rotate(rad-to-deg($pi / 2));
-  width: sin($pi / 4); }
+  width: sin(0);
+  width: sin($pi / 16);
+  width: sin($pi / 8);
+  width: sin($pi / 4);
+  width: sin($pi / 2);
+  width: sin($pi);
+  width: sin(10);
+}
