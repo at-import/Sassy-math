@@ -51,13 +51,25 @@ $rand: random number
 
 @function ln($number)
   @return ($number)
+  
+// Factorials
+@function factorial($number)
+  $holder: 1
+  @for $i from 1 through $number
+    $holder: $holder * $i
+  @return ($holder)
 
+@function fact($number)
+  @return factorial($number)
+
+// Convert between Degrees and Radians
 @function deg-to-rad($number)
   @return ($number * ( $pi / 180deg))
 
 @function rad-to-deg($number)
   @return ($number * ( 180deg / $pi ))
 
+// nth Root of a Number
 @function n-root($number, $n)
   @if $number < 1
     @return ERROR
@@ -71,6 +83,7 @@ $rand: random number
     @if round(exponent(($i / 1000), $n) * 100) == round($number * 100)
       @return ($i / 1000)
 
+// Square Roots
 @function √($number)
   @return n-root($number, 2)
 
@@ -86,4 +99,5 @@ $rand: random number
   width: √(9)
   width: √(9) * √(9)
   width: deg-to-rad(90deg)
+  width: factorial(9)
   -webkit-transform: rotate(rad-to-deg($pi/2))
