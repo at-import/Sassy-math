@@ -1,4 +1,6 @@
 @charset "UTF-8";
 .foo {
   width: 3;
-  width: 9; }
+  width: 9;
+  width: 1.571;
+  -webkit-transform: rotate(90deg); }
