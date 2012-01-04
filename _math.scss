@@ -13,6 +13,8 @@ $e: 2.71828182845904523536028747135266249775724709369995;
 
 $rand: random number;
 
+$iter: 10;
+
 //////////////////////////////
 // Percent
 //////////////////////////////
@@ -65,30 +67,6 @@ $rand: random number;
 @function taylor($start, $key, $number) {
   $value: $start;
   $add: 0;
-  $iter: 10;
-  //recursively correct for angles beyond pi/2 and -pi/2
-  @if $number < (-$pi/2) or $number > ($pi/2){
-    @if $number < 0 {
-      @if $key == 3 {
-        $value: taylor($number + $pi, $key, $number + $pi);
-      }
-      @else {
-        $value: taylor($start, $key, $number + $pi);
-      }
-      
-    }
-    @else{
-      @if $key == 3 {
-        $value: taylor($number - $pi, $key, $number - $pi);
-      }
-      @else {
-        $value: taylor($start, $key, $number - $pi);
-      }
-      
-    }
-    $value: -$value;
-    @return $value;
-  }
   
   @for $i from 1 through $iter {
     @if $add == 0 {
@@ -179,6 +157,14 @@ $rand: random number;
 }
 
 @function ln($number) {
+//  $value: $number;
+//  $key: 3;
+//  
+//  @for $i from 1 through $iter {
+//    $value: $value + ( exponent($number, $key) / factorial($key) );
+//  }
+//  $value: 2 * $value;
+//  @debug $value;
   @return $number; 
 }
 
@@ -243,4 +229,5 @@ $rand: random number;
   width: sin(10);
   width: cos($pi / 2); 
   width: cos(10);
+  width: ln(.5);
 }
