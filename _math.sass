@@ -27,9 +27,35 @@ $rand: random number
       $value: $value / $base
   // return the last value written
   @return $value
+  
+@function factorial($number)
+  // reset value
+  $value: 1
+  // positive intergers get multiplied
+  @if $number > 0
+    @for $i from 1 through $number
+      $value: $value * $i
 
+  @return $value
+  
+  //Implemented with Taylor Series, CORDIC is more elegant but i assume performance is not an issue
+  
 @function sin($number)
-  @return ($number)
+  // iterations
+  $n: 7 
+  $value: $number
+  $odd: 1
+  $add: 0
+  @for $i from 3 through $n
+    @if $odd == 1
+      $odd: 0
+      @if $add == 1
+        $value: $value + exponent($value, $i)/factorial($i)
+        $add: 0
+      @else
+        $value: $value - exponent($value, $i)/factorial($i)
+        $add: 1
+  @return ($value)
 
 @function sinh($number)
   @return ($number)
@@ -101,3 +127,4 @@ $rand: random number
   width: deg-to-rad(90deg)
   width: factorial(9)
   -webkit-transform: rotate(rad-to-deg($pi/2))
+  width: sin($pi/4)
