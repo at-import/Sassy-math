@@ -15,9 +15,12 @@ $iter: 10;
 
 //////////////////////////////
 // Random Number
+//   Working from http://xkcd.com/221/
+//    Chosen by fair dice roll.
+//    Guarenteed to be random.
 //////////////////////////////
 @function rand() {
-  @return random number;
+  @return 4;
 }
 
 //////////////////////////////
