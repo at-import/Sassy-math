@@ -87,31 +87,49 @@ $iter: 10;
 //////////////////////////////
 // Basic Trig Functions
 //////////////////////////////
-@function sin($number) {
+@function sin($number, $unit: 'deg') {
+  @if $unit == 'deg' {
+    $number: deg-to-rad($number);
+  }
   @return taylor($number, 3, $number);
 }
 
-@function cos($number) {
+@function cos($number, $unit: 'deg') {
+  @if $unit == 'deg' {
+    $number: deg-to-rad($number);
+  }
   @return taylor(1, 2, $number);
 }
 
 // Trig Identity: Tangent = Sine divided by Cosine.
-@function tan($number) {
+@function tan($number, $unit: 'deg') {
+  @if $unit == 'deg' {
+    $number: deg-to-rad($number);
+  }
   @return sin($number) / cos($number); 
 }
 
 //////////////////////////////
 // Reciprocal Trig Functions
 //////////////////////////////
-@function csc($number) {
+@function csc($number, $unit: 'deg') {
+  @if $unit == 'deg' {
+    $number: deg-to-rad($number);
+  }
   @return 1 / sin($number);
 }
 
-@function scs($number) {
+@function scs($number, $unit: 'deg') {
+  @if $unit == 'deg' {
+    $number: deg-to-rad($number);
+  }
   @return 1 / cos($number);
 }
 
-@function cot($number) {
+@function cot($number, $unit: 'deg') {
+  @if $unit == 'deg' {
+    $number: deg-to-rad($number);
+  }
   @return 1 / tan($number);
 }
 
@@ -225,9 +243,9 @@ $iter: 10;
   width: deg-to-rad(90deg);
   width: factorial(9);
   -webkit-transform: rotate(rad-to-deg($pi / 2));
-  width: sin($pi / 4); 
-  width: sin(10);
-  width: cos($pi / 2); 
-  width: cos(10);
+  width: sin($pi / 4, 'rad'); 
+  width: sin(10deg);
+  width: cos($pi / 2, 'rad'); 
+  width: cos(10deg);
   width: ln(.5);
 }
