@@ -7,16 +7,35 @@
 //////////////////////////////
 // Variables
 //////////////////////////////
-$pi: 3.1415926535897932384626433832795028841971693993751;
-$π: $pi;
-$e: 2.71828182845904523536028747135266249775724709369995;
-
-$rand: random number;
-
 $iter: 10;
 
 //////////////////////////////
-// Percent
+// Returns value of π
+//////////////////////////////
+@function pi() {
+  @return 3.1415926535897932384626433832795028841971693993751;
+}
+
+@function π() {
+  @return pi();
+}
+
+//////////////////////////////
+// Returns value of e
+//////////////////////////////
+@function e() {
+  @return 2.71828182845904523536028747135266249775724709369995;
+}
+
+//////////////////////////////
+// Returns a Random Number
+//////////////////////////////
+@function rand() {
+  @return random number;
+}
+
+//////////////////////////////
+// Percent of a Number
 //////////////////////////////
 @function percent($number) {
   @return $number * 0.01; 
@@ -137,20 +156,20 @@ $iter: 10;
 // Hyperbolic Functions
 //////////////////////////////
 @function sinh($number) {
-  $top: exponent($e, (2 * $number)) - 1;
-  $bottom: 2 * exponent($e, $number);
+  $top: exponent(e(), (2 * $number)) - 1;
+  $bottom: 2 * exponent(e(), $number);
   @return  $top / $bottom;
 }
 
 @function cosh($number) {
-  $top: exponent($e, (2 * $number)) + 1;
-  $bottom: 2 * exponent($e, $number);
+  $top: exponent(e(), (2 * $number)) + 1;
+  $bottom: 2 * exponent(e(), $number);
   @return  $top / $bottom;
 }
 
 @function tanh($number) {
-  $top: exponent($e, (2 * $number)) - 1;
-  $bottom: exponent($e, (2 * $number)) + 1;
+  $top: exponent(e(), (2 * $number)) - 1;
+  $bottom: exponent(e(), (2 * $number)) + 1;
   @return  $top / $bottom;
 }
 
@@ -191,11 +210,11 @@ $iter: 10;
 // Degree/Radian Conversion
 //////////////////////////////
 @function deg-to-rad($number) {
-  @return $number * $pi / 180deg; 
+  @return $number * pi() / 180deg; 
 }
 
 @function rad-to-deg($number) {
-  @return $number * 180deg / $pi; 
+  @return $number * 180deg / pi(); 
 }
 
 //////////////////////////////
@@ -242,10 +261,11 @@ $iter: 10;
   width: √(9) * √(9);
   width: deg-to-rad(90deg);
   width: factorial(9);
-  -webkit-transform: rotate(rad-to-deg($pi / 2));
-  width: sin($pi / 4, 'rad'); 
+  -webkit-transform: rotate(rad-to-deg(pi() / 2));
+  width: sin(pi() / 4, 'rad'); 
   width: sin(10deg);
-  width: cos($pi / 2, 'rad'); 
+  width: cos(pi() / 2, 'rad'); 
   width: cos(10deg);
   width: ln(.5);
+  width: rand();
 }
