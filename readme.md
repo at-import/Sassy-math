@@ -6,7 +6,7 @@ Sassy Math is an attempt to build advanced mathematical calculations into a Sass
 
 ## Functions included:
 
-* `rand()` — (Chosen by fair dice roll. Guarenteed to be random.)[http://xkcd.com/221/]
+* `rand()` — [Chosen by fair dice roll. Guarenteed to be random.](http://xkcd.com/221/)
 * `percent($number)`
 * `exponent($base, $exponent)`, `pow($base, $exponent)`
 * `factorial($number)`, `fact($number)`
