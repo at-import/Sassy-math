@@ -249,10 +249,6 @@ $iter: 50;
   @return n-root($number, 2); 
 }
 
-@function root($number) {
-  @return n-root($number, 2); 
-}
-
 @function sqrt($number) {
   @return n-root($number, 2); 
 }
