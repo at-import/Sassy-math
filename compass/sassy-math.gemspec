@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sassy-math}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.3.5")
   s.authors = ["Sam Richard", "Mario Valencia", "Scott Kellum"]
@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{https://github.com/scottkellum/Sassy-math}
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{sassy-math}
-  s.rubygems_version = %q{0.1.0}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Use advanced mathematical functions in Compass.}
   s.add_dependency(%q<compass>, ["~> 0.11"])
 end

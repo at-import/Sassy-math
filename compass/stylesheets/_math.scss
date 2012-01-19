@@ -253,19 +253,3 @@ $iter: 50;
 @function sqrt($number) {
   @return n-root($number, 2); 
 }
-
-//////////////////////////////
-// Export Test
-//////////////////////////////
-.foo {
-  width: √(9);
-  width: √(9) * √(9);
-  width: deg-to-rad(90deg);
-  width: factorial(9);
-  -webkit-transform: rotate(rad-to-deg($pi / 2));
-  width: sin($pi / 4, 'rad'); 
-  width: sin(10deg);
-  width: cos($pi / 2, 'rad'); 
-  width: cos(10deg);
-  width: ln(.1);
-}
