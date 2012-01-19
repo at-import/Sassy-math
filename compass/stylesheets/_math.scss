@@ -5,8 +5,8 @@
 //////////////////////////////
 // Variables
 //////////////////////////////
-$pi: 3.1415926535897932384626433832795028841971693993751;
-$π: $pi;
+$pi: pi();
+$π: pi();
 $e: 2.71828182845904523536028747135266249775724709369995;
 
 $iter: 50;
@@ -101,27 +101,30 @@ $iter: 50;
 //////////////////////////////
 // Basic Trig Functions
 //////////////////////////////
-@function sin($number, $unit: 'deg') {
-  @if $unit == 'deg' {
-    $number: deg-to-rad($number);
-  }
-  @return maclaurin($number, 3, $number);
-}
 
-@function cos($number, $unit: 'deg') {
-  @if $unit == 'deg' {
-    $number: deg-to-rad($number);
-  }
-  @return maclaurin(1, 2, $number);
-}
+// BUILT INTO COMPASS :: http://compass-style.org/reference/compass/helpers/trig/
 
+//@function sin($number, $unit: 'deg') {
+//  @if $unit == 'deg' {
+//    $number: deg-to-rad($number);
+//  }
+//  @return maclaurin($number, 3, $number);
+//}
+//
+//@function cos($number, $unit: 'deg') {
+//  @if $unit == 'deg' {
+//    $number: deg-to-rad($number);
+//  }
+//  @return maclaurin(1, 2, $number);
+//}
+//
 // Trig Identity: Tangent = Sine divided by Cosine.
-@function tan($number, $unit: 'deg') {
-  @if $unit == 'deg' {
-    $number: deg-to-rad($number);
-  }
-  @return sin($number) / cos($number); 
-}
+//@function tan($number, $unit: 'deg') {
+//  @if $unit == 'deg' {
+//    $number: deg-to-rad($number);
+//  }
+//  @return sin($number) / cos($number); 
+//}
 
 //////////////////////////////
 // Reciprocal Trig Functions
