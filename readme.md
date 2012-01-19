@@ -12,6 +12,11 @@ There is a Compass extension that leverages the existing [trig functions](http:/
 
 `sudo gem install sassy-math`
 
+## Variables included:
+
+* `$pi`, `$π` — The value of pi or 3.1415926…
+* `$e` — _e_ or Euler’s number.
+
 ## Functions included:
 
 * `rand()` — [Chosen by fair dice roll. Guarenteed to be random.](http://xkcd.com/221/)
