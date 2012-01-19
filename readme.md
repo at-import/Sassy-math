@@ -4,6 +4,14 @@
 
 Sassy Math is an attempt to build advanced mathematical calculations into a Sass tool. This can be useful in mathematically structured layouts, creating complex CSS animations, or whatever else you might need these calculators for.
 
+## Compass extension
+
+There is a Compass extension that leverages the existing [trig functions](http://compass-style.org/reference/compass/helpers/trig/) and expands upon them.
+
+#### Install:
+
+`sudo gem install sassy-math`
+
 ## Functions included:
 
 * `rand()` — [Chosen by fair dice roll. Guarenteed to be random.](http://xkcd.com/221/)
