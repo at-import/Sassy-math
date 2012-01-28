@@ -29,6 +29,16 @@ $iter: 50;
 }
 
 //////////////////////////////
+// Golden Ratio
+//////////////////////////////
+@function golden() {
+  @return 1/2 + sqrt(5) / 2;
+}
+@function ϕ() {
+  @return golden();
+}
+
+//////////////////////////////
 // Exponent
 //////////////////////////////
 @function exponent($base, $exponent) {
@@ -275,4 +285,5 @@ $iter: 50;
   width: cos(10deg);
   width: ln(.1);
   height: sqrt(25.4);
+  width: golden();
 }
