@@ -242,13 +242,22 @@ $iter: 50;
   } 
 }
 
+@function root($number, $n) {
+  @return n-root($number, $n);
+}
+
 // Square Roots
 @function √($number) {
-  @return n-root($number, 2); 
+  @return sqrt($number); 
 }
 
 @function sqrt($number) {
-  @return n-root($number, 2); 
+  $guess: rand();
+  $root: $guess;
+  @for $i from 1 through $iter {
+    $root: $root - (pow($root, 2) - $number) / (2 * $root);
+  }
+  @return $root;
 }
 
 //////////////////////////////
@@ -265,4 +274,5 @@ $iter: 50;
   width: cos($pi / 2, 'rad'); 
   width: cos(10deg);
   width: ln(.1);
+  height: sqrt(25.4);
 }
