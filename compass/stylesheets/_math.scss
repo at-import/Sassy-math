@@ -5,8 +5,8 @@
 //////////////////////////////
 // Variables
 //////////////////////////////
-$pi: pi();
-$π: pi();
+$pi: 3.1415926535897932384626433832795028841971693993751;
+$π: $pi;
 $e: 2.71828182845904523536028747135266249775724709369995;
 
 $iter: 50;
@@ -26,6 +26,16 @@ $iter: 50;
 //////////////////////////////
 @function percent($number) {
   @return $number * 0.01; 
+}
+
+//////////////////////////////
+// Golden Ratio
+//////////////////////////////
+@function golden() {
+  @return 1/2 + sqrt(5) / 2;
+}
+@function ϕ() {
+  @return golden();
 }
 
 //////////////////////////////
@@ -101,30 +111,27 @@ $iter: 50;
 //////////////////////////////
 // Basic Trig Functions
 //////////////////////////////
+@function sin($number, $unit: 'deg') {
+  @if $unit == 'deg' {
+    $number: deg-to-rad($number);
+  }
+  @return maclaurin($number, 3, $number);
+}
 
-// BUILT INTO COMPASS :: http://compass-style.org/reference/compass/helpers/trig/
+@function cos($number, $unit: 'deg') {
+  @if $unit == 'deg' {
+    $number: deg-to-rad($number);
+  }
+  @return maclaurin(1, 2, $number);
+}
 
-//@function sin($number, $unit: 'deg') {
-//  @if $unit == 'deg' {
-//    $number: deg-to-rad($number);
-//  }
-//  @return maclaurin($number, 3, $number);
-//}
-//
-//@function cos($number, $unit: 'deg') {
-//  @if $unit == 'deg' {
-//    $number: deg-to-rad($number);
-//  }
-//  @return maclaurin(1, 2, $number);
-//}
-//
 // Trig Identity: Tangent = Sine divided by Cosine.
-//@function tan($number, $unit: 'deg') {
-//  @if $unit == 'deg' {
-//    $number: deg-to-rad($number);
-//  }
-//  @return sin($number) / cos($number); 
-//}
+@function tan($number, $unit: 'deg') {
+  @if $unit == 'deg' {
+    $number: deg-to-rad($number);
+  }
+  @return sin($number) / cos($number); 
+}
 
 //////////////////////////////
 // Reciprocal Trig Functions
@@ -245,11 +252,38 @@ $iter: 50;
   } 
 }
 
+@function root($number, $n) {
+  @return n-root($number, $n);
+}
+
 // Square Roots
 @function √($number) {
-  @return n-root($number, 2); 
+  @return sqrt($number); 
 }
 
 @function sqrt($number) {
-  @return n-root($number, 2); 
+  $guess: rand();
+  $root: $guess;
+  @for $i from 1 through $iter {
+    $root: $root - (pow($root, 2) - $number) / (2 * $root);
+  }
+  @return $root;
+}
+
+//////////////////////////////
+// Export Test
+//////////////////////////////
+.foo {
+  width: √(9);
+  width: √(9) * √(9);
+  width: deg-to-rad(90deg);
+  width: factorial(9);
+  -webkit-transform: rotate(rad-to-deg($pi / 2));
+  width: sin($pi / 4, 'rad'); 
+  width: sin(10deg);
+  width: cos($pi / 2, 'rad'); 
+  width: cos(10deg);
+  width: ln(.1);
+  height: sqrt(25.4);
+  width: golden();
 }
