@@ -38,6 +38,10 @@ $iter: 50;
   @return golden();
 }
 
+$golden: golden();
+$gold: $golden;
+$ϕ: $golden;
+
 //////////////////////////////
 // Exponent
 //////////////////////////////
@@ -111,27 +115,8 @@ $iter: 50;
 //////////////////////////////
 // Basic Trig Functions
 //////////////////////////////
-@function sin($number, $unit: 'deg') {
-  @if $unit == 'deg' {
-    $number: deg-to-rad($number);
-  }
-  @return maclaurin($number, 3, $number);
-}
 
-@function cos($number, $unit: 'deg') {
-  @if $unit == 'deg' {
-    $number: deg-to-rad($number);
-  }
-  @return maclaurin(1, 2, $number);
-}
-
-// Trig Identity: Tangent = Sine divided by Cosine.
-@function tan($number, $unit: 'deg') {
-  @if $unit == 'deg' {
-    $number: deg-to-rad($number);
-  }
-  @return sin($number) / cos($number); 
-}
+// Bundled in compass: http://compass-style.org/reference/compass/helpers/trig/
 
 //////////////////////////////
 // Reciprocal Trig Functions
@@ -268,22 +253,4 @@ $iter: 50;
     $root: $root - (pow($root, 2) - $number) / (2 * $root);
   }
   @return $root;
-}
-
-//////////////////////////////
-// Export Test
-//////////////////////////////
-.foo {
-  width: √(9);
-  width: √(9) * √(9);
-  width: deg-to-rad(90deg);
-  width: factorial(9);
-  -webkit-transform: rotate(rad-to-deg($pi / 2));
-  width: sin($pi / 4, 'rad'); 
-  width: sin(10deg);
-  width: cos($pi / 2, 'rad'); 
-  width: cos(10deg);
-  width: ln(.1);
-  height: sqrt(25.4);
-  width: golden();
 }
