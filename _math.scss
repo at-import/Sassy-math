@@ -38,6 +38,10 @@ $iter: 50;
   @return golden();
 }
 
+$golden: golden();
+$gold: $golden;
+$ϕ: $golden;
+
 //////////////////////////////
 // Exponent
 //////////////////////////////
