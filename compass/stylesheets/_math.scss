@@ -254,3 +254,36 @@ $ϕ: $golden;
   }
   @return $root;
 }
+
+//////////////////////////////
+// Is Int and Is Float
+//////////////////////////////
+@function is-int($number) {
+  @if type-of($number) != 'number' {
+    @warn '#{$number} is not a number! It cannot be an integer if it is not a number!';
+    @return false;
+  }
+  @if $number - floor($number) != 0 {
+    @return false;
+  }
+  @else {
+    @return true;
+  }
+}
+
+@function is-float($number) {
+  @if type-of($number) != 'number' {
+    @warn '#{$number} is not a number! It cannot be an decimal if it is not a number!';
+    @return false;
+  }
+  @if $number - floor($number) != 0 {
+    @return true;
+  }
+  @else {
+    @return false;
+  }
+}
+
+@function is-decimal($number) {
+  @return is-float($number);
+}
