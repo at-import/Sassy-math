@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sassy-math}
-  s.version = "0.1.6"
+  s.version = "0.1.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.3.5")
   s.authors = ["Sam Richard", "Mario Valencia", "Scott Kellum"]
