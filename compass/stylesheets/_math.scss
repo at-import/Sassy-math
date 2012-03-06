@@ -29,20 +29,6 @@ $iter: 50;
 }
 
 //////////////////////////////
-// Golden Ratio
-//////////////////////////////
-@function golden() {
-  @return 1/2 + sqrt(5) / 2;
-}
-@function ϕ() {
-  @return golden();
-}
-
-$golden: golden();
-$gold: $golden;
-$ϕ: $golden;
-
-//////////////////////////////
 // Exponent
 //////////////////////////////
 @function exponent($base, $exponent) {
@@ -115,8 +101,30 @@ $ϕ: $golden;
 //////////////////////////////
 // Basic Trig Functions
 //////////////////////////////
+// Bundled in Compass: http://compass-style.org/reference/compass/helpers/trig/
+// References for implementing using MacLaurin series below:
 
-// Bundled in compass: http://compass-style.org/reference/compass/helpers/trig/
+//@function sin($number, $unit: 'deg') {
+//  @if $unit == 'deg' {
+//    $number: deg-to-rad($number);
+//  }
+//  @return maclaurin($number, 3, $number);
+//}
+//
+//@function cos($number, $unit: 'deg') {
+//  @if $unit == 'deg' {
+//    $number: deg-to-rad($number);
+//  }
+//  @return maclaurin(1, 2, $number);
+//}
+//
+//// Trig Identity: Tangent = Sine divided by Cosine.
+//@function tan($number, $unit: 'deg') {
+//  @if $unit == 'deg' {
+//    $number: deg-to-rad($number);
+//  }
+//  @return sin($number) / cos($number); 
+//}
 
 //////////////////////////////
 // Reciprocal Trig Functions
@@ -254,6 +262,19 @@ $ϕ: $golden;
   }
   @return $root;
 }
+
+//////////////////////////////
+// Golden Ratio
+//////////////////////////////
+@function golden() {
+  @return 1/2 + sqrt(5) / 2;
+}
+@function ϕ() {
+  @return golden();
+}
+
+$golden-ratio: golden();
+$ϕ: $golden-ratio;
 
 //////////////////////////////
 // Is Int and Is Float
