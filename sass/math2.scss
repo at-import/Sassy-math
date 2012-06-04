@@ -1,0 +1,42 @@
+//////////////////////////////
+// Variables
+//////////////////////////////
+
+////////////////////////
+// Function Aliases
+////////////////////////
+
+
+////////////////////////
+// Functions
+////////////////////////
+@function percent-to-decimal($number) {
+  @return $number * 0.01 / 1%;
+}
+
+////////////////////////
+// Test
+////////////////////////
+$fraction: 2.5;
+
+#tester {
+  numerator: numerator($fraction);
+  denominator: denominator($fraction);
+  to-fraction: to-fraction($fraction);
+  to-decimal: to-decimal(3/2);
+  exponent: exponent(8, 2, 3);
+  power: power(3, 2);
+  sqrt: sqrt(16129);
+  nth-root: nth-root(27, 3);
+  factorial: factorial(9);
+  pi: pi();
+  e: e();
+//  pi: $pi;
+//  e: $e;
+//  rand: rand();
+  ln: ln(e());
+  log10: log10(10);
+  golden: golden-ratio();
+  is-int: is-int(4);
+  is-float: is-float(2);
+}

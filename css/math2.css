@@ -1,0 +1,19 @@
+/* line 22, ../sass/math2.scss */
+#tester {
+  numerator: 5;
+  denominator: 2;
+  to-fraction: 5/2;
+  to-decimal: 1.5;
+  exponent: 4.0;
+  power: 9;
+  sqrt: 127;
+  nth-root: 3;
+  factorial: 362880;
+  pi: 3.142;
+  e: 2.718;
+  ln: 1;
+  log10: 1;
+  golden: 1.618;
+  is-int: true;
+  is-float: false;
+}

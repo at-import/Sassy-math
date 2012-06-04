@@ -1,11 +1,34 @@
-require 'compass'
+# Require any additional compass plugins here.
 require 'fraction'
-Compass::Frameworks.register("sassy-math", :path => "#{File.dirname(__FILE__)}/..")
 
-# Sassy math Functions
+# Set this to the root of your project when deployed:
+http_path = "/"
+css_dir = "css"
+sass_dir = "sass"
+images_dir = "images"
+javascripts_dir = "javascripts"
+
+# You can select your preferred output style here (can be overridden via the command line):
+# output_style = :expanded or :nested or :compact or :compressed
+
+# To enable relative paths to assets via compass helper functions. Uncomment:
+# relative_assets = true
+
+# To disable debugging comments that display the original location of your selectors. Uncomment:
+# line_comments = false
+
+
+# If you prefer the indented syntax, you might want to regenerate this
+# project again passing --syntax sass, or you can uncomment this:
+# preferred_syntax = :sass
+# and then run:
+# sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
+
+
+# Sass Script Proving Grounds
+# Fractions
 module Sass::Script::Functions
   # Computational Functions
-  # Fraction Functions
   def numerator(number)
     Sass::Script::Number.new(number.value.fraction.first)
   end
@@ -21,7 +44,6 @@ module Sass::Script::Functions
     fraction = fraction.value.to_f
     Sass::Script::Number.new(fraction)
   end
-  # Exponent Functions
   def exponent(base, powerNum, powerDen)
     base = base.value.to_f
     powerNum = powerNum.value.to_f
@@ -46,7 +68,6 @@ module Sass::Script::Functions
     result = number ** (1.0 / root)
     Sass::Script::Number.new(result)
   end
-  # Factorial
   def factorial(number)
     result = 1
     number = number.value
@@ -57,12 +78,11 @@ module Sass::Script::Functions
     end 
     Sass::Script::Number.new(result)
   end
-  # Log Functions
   def ln(num)
     result = Math.log(num.value)
     Sass::Script::Number.new(result)
   end
-  def log(num)
+  def log10(num)
     result = Math.log10(num.value)
     Sass::Script::Number.new(result)
   end
@@ -101,11 +121,4 @@ module Sass::Script::Functions
     end
     Sass::Script::Bool.new(result)
   end
-end
-
-module SassyMath
-  
-  VERSION = "1.0"
-  DATE = "2012-06-03"
-
 end
