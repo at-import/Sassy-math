@@ -12,8 +12,7 @@ Gem::Specification.new do |s|
   s.has_rdoc = false
   s.files = [
     "sassy-math.gemspec",
-    "lib/sassy-math.rb",
-    "stylesheets/_math.scss"
+    "lib/sassy-math.rb"
   ]
   s.homepage = %q{https://github.com/scottkellum/Sassy-math}
   s.require_paths = ["lib"]
