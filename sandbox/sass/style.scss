@@ -1,0 +1,27 @@
+// Built into Compass:
+//@debug pi();
+//@debug e();
+//
+//@debug sin(3);
+//@debug cos(3);
+//@debug tan(3);
+//
+//@debug log(2);
+//@debug sqrt(4);
+//@debug pow(4, 4);
+//
+// Sassy Math:
+//@debug numerator(.3);
+//@debug denominator(.3);
+//@debug to-fraction(.3);
+//@debug to-decimal(1/3);
+//@debug exponent(8, 2, 4);
+//@debug power(4, 4);
+//@debug nth-root(8, 4);
+//@debug sqrt(8);
+//@debug ln(8);
+// @debug log(8);
+//@debug factorial(8);
+@debug rand;
+//@debug is-int(3);
+//@debug is-float(8);
