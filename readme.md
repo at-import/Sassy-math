@@ -2,7 +2,7 @@
 
 Sassy Math is a tool designed to expand upon Sass and Compass's built in mathematic operations to include more advanced functions needed for complex calculations. These calculations may include mathematics based gird layouts, complex background images, advanced CSS animations, and anything else you can imagine.
 
-## Install:
+## Install
 
 `sudo gem install sassy-math`
 
@@ -42,7 +42,7 @@ Sassy Math is a tool designed to expand upon Sass and Compass's built in mathema
 Note: Compass comes with sine (`sin($radians)`), cosine (`cos($radians)`), and tangent (`tan($radians)`) functions already, so they aren't included as part of Sassy Math.
 
 * `deg-to-rad($degrees)` - Returns the $degrees in radians.
-* `rad-to-deg($radians)` - Returns the $radians in degrees. Returns a unitless number.
+* `rad-to-deg($radians)` - Returns the $radians in degrees (unitless).
 * `sinh($radians)` - Hyperbolic sine of $radians.
 * `asin($radians)` - Arcsine of $radians. Constrained to the domain -1 ≤ $radians ≤ 1.
 * `asinh($radians)` - Hyperbolic arcsine of $radians.
