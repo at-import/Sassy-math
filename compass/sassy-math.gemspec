@@ -2,13 +2,13 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sassy-math}
-  s.version = "1.0"
+  s.version = "1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.3.5")
   s.authors = ["Sam Richard", "Mario Valencia", "Scott Kellum"]
-  s.date = %q{2012-06-01}
+  s.date = %q{2012-06-17}
   s.description = %q{Use advanced mathematical functions in Compass.}
-  s.email = %w{scott@scottkellum.com}
+  s.email = %w{snugug@gmail.com}
   s.has_rdoc = false
   s.files = [
     "sassy-math.gemspec",
