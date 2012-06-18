@@ -38,9 +38,26 @@ Sassy Math is a tool designed to expand upon Sass and Compass's built in mathema
 * `ln($number)` - The natural log of the $number.
 * `log($number)` - The base 10 log of the $number
 
+### Trigonometry
+Note: Compass comes with sine (`sin($radians)`), cosine (`cos($radians)`), and tangent (`tan($radians)`) functions already, so they aren't included as part of Sassy Math.
+
+* `deg-to-rad($degrees)` - Returns the $degrees in radians.
+* `rad-to-deg($radians)` - Returns the $radians in degrees. Returns a unitless number.
+* `sinh($radians)` - Hyperbolic sine of $radians.
+* `asin($radians)` - Arcsine of $radians. Constrained to the domain -1 ≤ $radians ≤ 1.
+* `asinh($radians)` - Hyperbolic arcsine of $radians.
+* `cosh($radians)` - Hyperbolic cosine of $radians.
+* `acos($radians)` - Arccosine of $radians. Constrained to the domain -1 ≤ $radians ≤ 1.
+* `acosh($radians)` - Hyperbolic arccosine of $radians. Constrained to the domain $radians < 1.
+* `tanh($radians)` - Hyperbolic tangent of $radians.
+* `atan($radians)` - Arctangent of $radians.
+* `atan2($y, $x)` - Arctangent given $x and $y.
+* `atanh($radians)` - Hyperbolic arctangent of $radians. $radians cannot equal ±1.
+
 ### Miscellaneous
 * `factorial($number)` - The factorial of the $number.
 * `rand()` — Random number [chosen by fair dice roll. Guaranteed to be random.](http://xkcd.com/221/)
+* `hypot($a, $b)` - Returns the hypotenuse of a right-angled triangle given sides $a and $b
 
 ### Comparative
 * `is-int($number)` - Determines whether or not the $number is an integer. Returns true or false.

@@ -1,11 +1,11 @@
-/* line 22, ../sass/math2.scss */
+/* line 36, ../sass/math2.scss */
 #tester {
   numerator: 5;
   denominator: 2;
   to-fraction: 5/2;
   to-decimal: 1.5;
   exponent: 4.0;
-  power: 9;
+  power: 12226.616;
   sqrt: 127;
   nth-root: 3;
   factorial: 362880;
