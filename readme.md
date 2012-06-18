@@ -20,7 +20,7 @@ Sassy Math is a tool designed to expand upon Sass and Compass's built in mathema
 * `e()` — _e_ or [Euler’s number](http://en.wikipedia.org/wiki/E_(mathematical_constant)).
 * `golden-ratio()` - _φ_ or the [Golden Ratio](http://en.wikipedia.org/wiki/Golden_ratio).
 
-## Functions:
+## Functions
 
 ### Fractions
 * `numerator($number)` - Numerator of the given number, passed in as a decimal
