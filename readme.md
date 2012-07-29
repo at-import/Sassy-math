@@ -22,12 +22,6 @@ Sassy Math is a tool designed to expand upon Sass and Compass's built in mathema
 
 ## Functions
 
-### Fractions
-* `numerator($number)` - Numerator of the given number, passed in as a decimal
-* `denominator($number)` - Denominator of the given number, passed in as a decimal
-* `to-fraction($number)` - Fractional representation of the given number, passed in as a decimal
-* `to-decimal($fraction)` - Decimal representation of the given number, passed in as a fraction
-
 ### Exponents
 * `exponent($base, $power_numerator, $power_denominator)` - The $base raised to the given power where the power is a fraction in the form of `$power_numerator / $power_denominator`.
 * `power($base, $power)` - The $base raised to the given $power where the power is an integer or floating point number.
