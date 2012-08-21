@@ -2,6 +2,10 @@
 
 Sassy Math is a tool designed to expand upon Sass and Compass's built in mathematic operations to include more advanced functions needed for complex calculations. These calculations may include mathematics based gird layouts, complex background images, advanced CSS animations, and anything else you can imagine.
 
+## Requirements
+
+Sassy Math is a Compass extension, so make sure you have [Sass and Compass Installed](http://compass-style.org/install/) in order to use its awesomeness!
+
 ## Install
 
 `sudo gem install sassy-math`
