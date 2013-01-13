@@ -106,12 +106,9 @@ module Sass::Script::Functions
     e = Math::E
     Sass::Script::Number.new(e)
   end
-<<<<<<< HEAD
-=======
   def random(max = Sass::Script::Number.new(100)) ## shamelessly taken from here: https://gist.github.com/1561650
     Sass::Script::Number.new(rand(max.value), max.numerator_units, max.denominator_units)
   end
->>>>>>> Add a real random function in.
   def golden_ratio()
     result = (1.0 / 2.0) + (Math.sqrt(5) / 2.0)
     Sass::Script::Number.new(result)
