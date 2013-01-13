@@ -26,23 +26,8 @@ javascripts_dir = "javascripts"
 
 
 # Sass Script Proving Grounds
+# Sassy math Functions
 module Sass::Script::Functions
-  # Fractions
-  def numerator(number)
-    Sass::Script::Number.new(number.value.fraction.first)
-  end
-  def denominator(number)
-    num, den = number.value.fraction
-    Sass::Script::Number.new(den)
-  end
-  def to_fraction(number)
-    result = numerator(number).to_s + '/' + denominator(number).to_s
-    Sass::Script::String.new(result)
-  end
-  def to_decimal(fraction)
-    fraction = fraction.value.to_f
-    Sass::Script::Number.new(fraction)
-  end
   # Exponents
   def exponent(base, powerNum, powerDen)
     base = base.value.to_f
@@ -88,8 +73,8 @@ module Sass::Script::Functions
     end 
     Sass::Script::Number.new(result)
   end
-  def rand
-    Sass::Script::Number.new(4)
+  def random(max = Sass::Script::Number.new(100)) ## shamelessly taken from here: https://gist.github.com/1561650
+    Sass::Script::Number.new(rand(max.value), max.numerator_units, max.denominator_units)
   end
   def hypot(a, b)
     a = a.value.to_f
@@ -105,9 +90,6 @@ module Sass::Script::Functions
   def e
     e = Math::E
     Sass::Script::Number.new(e)
-  end
-  def random(max = Sass::Script::Number.new(100)) ## shamelessly taken from here: https://gist.github.com/1561650
-    Sass::Script::Number.new(rand(max.value), max.numerator_units, max.denominator_units)
   end
   def golden_ratio()
     result = (1.0 / 2.0) + (Math.sqrt(5) / 2.0)
@@ -154,7 +136,7 @@ module Sass::Script::Functions
   def acosh(rad)
     rad = rad.value.to_f
     result = Math.acosh(rad)
-    Sass::Script::Number.new(reult)
+    Sass::Script::Number.new(result)
   end
   def sinh(rad)
     rad = rad.value.to_f
