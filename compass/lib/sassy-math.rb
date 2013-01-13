@@ -48,7 +48,7 @@ module Sass::Script::Functions
     end 
     Sass::Script::Number.new(result)
   end
-  def random(type = Sass::Script::String.new("number"), max = Sass::Script::Number.new(100)) ## https://gist.github.com/1561650 Chris E.
+  def random(type = Sass::Script::String.new("number"), max = Sass::Script::Number.new(100)) ## https://gist.github.com/1561650 and modified by https://github.com/bookcasey
     if type.value == "color"
       Sass::Script::Color.new(:red => rand(255), :green => rand(255), :blue => rand(255))
     else
@@ -157,7 +157,7 @@ end
 
 module SassyMath
   
-  VERSION = "1.3"
+  VERSION = "1.4"
   DATE = "2012-07-29"
 
 end
