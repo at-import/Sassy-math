@@ -54,7 +54,7 @@ Note: Compass comes with sine (`sin($radians)`), cosine (`cos($radians)`), and t
 
 ### Miscellaneous
 * `factorial($number)` - The factorial of the $number.
-* `rand()` — Random number [chosen by fair dice roll. Guaranteed to be random.](http://xkcd.com/221/)
+* `random($max)` — Random number. The default max is 100 but you can specify whatever you want.
 * `hypot($a, $b)` - Returns the hypotenuse of a right-angled triangle given sides $a and $b
 
 ### Comparative
