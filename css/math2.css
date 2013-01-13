@@ -9,11 +9,11 @@
   sqrt: 127;
   nth-root: 3;
   factorial: 362880;
-  pi: 3.142;
-  e: 2.718;
+  pi: 3.14159;
+  e: 2.71828;
   ln: 1;
   log10: 1;
-  golden: 1.618;
+  golden: 1.61803;
   is-int: true;
   is-float: false;
 }
