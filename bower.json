@@ -1,0 +1,13 @@
+{
+  "name": "sassy-math",
+  "version": "1.5",
+  "main": "compass/stylesheets/_math.scss",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "css",
+    "sass",
+    "config.rb"
+  ]
+}
