@@ -36,20 +36,31 @@ Sassy Math is a Compass extension, so make sure you have [Sass and Compass Insta
 * `ln($number)` - The natural log of the $number.
 * `log($number)` - The base 10 log of the $number
 
-### Trigonometry
+### Angular
 Note: Compass comes with sine (`sin($radians)`), cosine (`cos($radians)`), and tangent (`tan($radians)`) functions already, so they aren't included as part of Sassy Math.
+
+#### General
 
 * `deg-to-rad($degrees)` - Returns the $degrees in radians.
 * `rad-to-deg($radians)` - Returns the $radians in degrees (unitless).
-* `sinh($radians)` - Hyperbolic sine of $radians.
+
+#### Inverse Trigonometric
+
 * `asin($radians)` - Arcsine of $radians. Constrained to the domain -1 ≤ $radians ≤ 1.
-* `asinh($radians)` - Hyperbolic arcsine of $radians.
-* `cosh($radians)` - Hyperbolic cosine of $radians.
 * `acos($radians)` - Arccosine of $radians. Constrained to the domain -1 ≤ $radians ≤ 1.
-* `acosh($radians)` - Hyperbolic arccosine of $radians. Constrained to the domain $radians < 1.
-* `tanh($radians)` - Hyperbolic tangent of $radians.
 * `atan($radians)` - Arctangent of $radians.
 * `atan2($y, $x)` - Arctangent given $x and $y.
+
+#### Hyperbolic
+
+* `sinh($radians)` - Hyperbolic sine of $radians.
+* `cosh($radians)` - Hyperbolic cosine of $radians.
+* `tanh($radians)` - Hyperbolic tangent of $radians.
+
+#### Inverse Hyperbolic
+
+* `asinh($radians)` - Hyperbolic arcsine of $radians.
+* `acosh($radians)` - Hyperbolic arccosine of $radians. Constrained to the domain $radians < 1.
 * `atanh($radians)` - Hyperbolic arctangent of $radians. $radians cannot equal ±1.
 
 ### Miscellaneous
