@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
   s.rubyforge_project = %q{sassy-math}
   s.rubygems_version = %q{1.3.6}
   s.summary = %q{Advanced math functions for Compass.}
-  s.add_dependency(%q<compass>, ["~> 0.11"])
+  s.add_dependency(%q<compass>, [">= 0.11"])
 end
