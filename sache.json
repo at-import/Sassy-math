@@ -1,0 +1,5 @@
+{
+  "name": "sassy-math",
+  "description": "Sassy Math is a tool designed to expand upon Sass and Compass's built in mathematic operations to include more advanced functions needed for complex calculations. These calculations may include mathematics based grid layouts, complex background images, advanced CSS animations, and anything else you can imagine.",
+  "tags": ["math", "code-quality", "dry", "performance"]
+}
